@@ -9,14 +9,16 @@ public class PastaRecipe {
     private String dishPreparation;
     private String dishPortions;
     private String dishTime;
+    private String dishImage;
 
-    public PastaRecipe(String dishName, String dishID, String dishIngredients, String dishPreparation, String dishPortions, String dishTime) {
+    public PastaRecipe(String dishName, String dishID, String dishIngredients, String dishPreparation, String dishPortions, String dishTime,String dishImage) {
         this.dishName = dishName;
         this.dishID = dishID;
         this.dishIngredients = dishIngredients;
         this.dishPreparation = dishPreparation;
         this.dishPortions = dishPortions;
         this.dishTime = dishTime;
+        this.dishImage = dishImage; 
     }
 
     
@@ -68,6 +70,16 @@ public class PastaRecipe {
     public void setDishTime(String dishTime) {
         this.dishTime = dishTime;
     }
+
+    public String getDishImage() {
+        return dishImage;
+    }
+
+    public void setDishImage(String dishImage) {
+        this.dishImage = dishImage;
+    }
+    
+    //idk czy to zadziala
     
     
 }

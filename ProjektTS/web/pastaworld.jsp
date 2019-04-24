@@ -7,55 +7,46 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Pasta is fun</title>
+        <LINK href="css/styles.css" rel="stylesheet" type="text/css">
     </head>
     <body>
-        <h1>Recipe List:</h1>
-        <table style="width:50%" border="1">
-            
-            <tr>
-                <th>ID</th>
-                <th>Name</th>
-                <th>Ingredients</th>
-                <th>Preparation</th>
-                <th>Amount of servings</th>
-                <th>Time in minutes</th>
-            </tr>
-            
-                <c:forEach var="pastarecipe" items="${pastaList}">
-              
-              <tr>
-                  <td><c:out value="${pastarecipe.dishID}"/></td>
-                  <td><c:out value="${pastarecipe.dishName}"/></td>
-                  <td><c:out value="${pastarecipe.dishIngredients}"/></td>
-                  <td><c:out value="${pastarecipe.dishPreparation}"/></td>
-                  <td><c:out value="${pastarecipe.dishPortions}"/></td>
-                  <td><c:out value="${pastarecipe.dishTime}"/></td>
-
-                  
-              </tr>
-              </c:forEach>
-            </table>
+            <c:forEach var="pastarecipe" items="${pastaList}">
+            <div class="recipe-card">
+              <div class="recipe-text">
+                <span><b>ID:</b><c:out value="${pastarecipe.dishID}"/></span>
+                <span><b>Dish:</b><c:out value="${pastarecipe.dishName}"/></span>
+                <span><b>Ingredients:</b><c:out value="${pastarecipe.dishIngredients}"/></span>
+                <span><b>Preparation:</b><c:out value="${pastarecipe.dishPreparation}"/></span>
+                <span><b>Amount of servings:</b><c:out value="${pastarecipe.dishPortions}"/></span>
+                <span>Time:<c:out value="${pastarecipe.dishTime}"/></span>
+              </div>
+              <div class="recipe-image">
+                <img src="${pastarecipe.dishImage}" alt="dish-pic" />
+              </div>
+            </div>
+            </c:forEach>
             <form action="PastaServlet" method="post">
-                <br>
-                <br>
-                Index <input type="text" name="DishID">
-                <br>
-                <br>
-                Dish Name <input type="text" name="DishName">
-                <br>
-                <br>
-                Ingredients <input type="text" name="DishIngredients">
-                <br>
-                <br>
-                Preparation  <input type="text" name="DishMaking">
-                <br>
-                <br>
-                Portions  <input type="text" name="DishPortions">
-                <br>
-                <br>
-                Time in minutes <input type="text" name="DishTime">
-                <br>
-                <br>
+                <div class="formWrapper">
+                <div class="inputName">
+                    <span>Index</span>
+                    <span>Dish Name</span>
+                    <span>Ingredients</span>
+                    <span>Preparation</span>
+                    <span>Portions</span>
+                    <span>Time</span>
+                    <span>Image URL</span>
+                </div>
+                <div class="inputs">
+                     <input type="text" name="DishID">
+                     <input type="text" name="DishName">
+                     <input type="text" name="DishIngredients">
+                     <input type="text" name="DishMaking">
+                     <input type="text" name="DishPortions">
+                     <input type="text" name="DishTime">
+                     <input type="text" name="DishImage">
+                </div>
+                </div>
+
                 <input type="radio" name="operation" value="Add">Add
                 <br>
                 <input type="radio" name="operation" value="Remove">Remove
@@ -64,6 +55,5 @@
                 <br>
                 <input type="submit" value="Go">
             </form>
-        
     </body>
 </html>

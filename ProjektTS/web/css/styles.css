@@ -1,0 +1,74 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Apr 24, 2019, 8:58:00 PM
+    Author     : Wojciech
+*/
+
+body {
+  padding: 10px;
+  background:url(https://media.idownloadblog.com/wp-content/uploads/2018/05/low-poly-texture-120-roundedhexagon-wwallpaper.png) no-repeat center center fixed rgba(89, 165, 127,0.5);
+}
+
+.recipe-card {
+  width: 50%;
+  height: 20%;
+  margin-bottom: 20px;
+  background-color: rgba(63, 191, 127,0.6);
+  display: flex;
+  padding: 20px;
+  transition: 0.2s;
+}
+
+.recipe-card:hover {
+  background-color: rgba(63, 191, 127,0.8);
+}
+
+span {
+  display: flex;
+}
+
+.recipe-text{
+  flex: 1
+}
+
+.recipe-image{
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.recipe-image img {
+  max-height: 200px;
+}
+
+input {
+  background-color: rgba(63, 191, 127,0.6); 
+  border: none;
+  transition: 0.2s;
+}
+
+input:focus {
+   background-color: rgba(63, 191, 127,1);  
+}
+
+input:hover {
+   background-color: rgba(63, 191, 127,0.8);  
+}
+
+.formWrapper {
+    display: flex;
+    width: 0%;
+}
+
+.inputName {
+    flex: 1;
+}
+
+.inputs{
+    flex:1;
+    display: block;
+}

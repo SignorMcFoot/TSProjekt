@@ -44,7 +44,7 @@ public class PastaServlet extends HttpServlet {
     }
 
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)// xDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD
             throws ServletException, IOException {
         if (pastaList != null) {
             String id = request.getParameter("DishID");
@@ -54,11 +54,12 @@ public class PastaServlet extends HttpServlet {
             String operation = request.getParameter("operation");
             String portions = request.getParameter("DishPortions");
             String time = request.getParameter("DishTime");
-            PastaRecipe recipe = createPastaRecipe(name,id,ingredients,prep,portions,time);
+            String image = request.getParameter("DishImage");
+            PastaRecipe recipe = createPastaRecipe(name,id,ingredients,prep,portions,time,image);
             if (recipe != null) {
                 switch (operation) {
                     case "Add":
-                        String sqlQuery = ("INSERT INTO recipes(DishName,DishID,DishIngredients,DishMaking,DishTime,DishPortions) values('" + name + "','" + id + "','" + ingredients + "','" + prep + "','" + time + "'," + portions + ")");
+                        String sqlQuery = ("INSERT INTO recipes(DishName,DishID,DishIngredients,DishMaking,DishTime,DishPortions,DishImage) values('" + name + "','" + id + "','" + ingredients + "','" + prep + "','" + time + "','" + portions + "','"+image+"')");
                         try {
                             execQuery(sqlQuery);
                         } catch (SQLException ex) {
@@ -67,7 +68,7 @@ public class PastaServlet extends HttpServlet {
 
                         break;
                     case "Remove":
-                        String sqlQuery1 = ("DELETE FROM recipes WHERE id = " + id);
+                        String sqlQuery1 = ("DELETE FROM recipes WHERE dishid = '" + id+"'");
 
                         try {
                             execQuery(sqlQuery1);
@@ -77,14 +78,14 @@ public class PastaServlet extends HttpServlet {
 
                         break;
                     case "Edit":
-                        String sqlQuery2 = ("UPDATE recipes SET DishName = '"+ name+"', DishIngredients = '"+ingredients+"', DishMaking ='"+prep+"',DishTime ='"+ time +",DishPortions = '"+portions+"' where id = '" + id+"'");
+                        String sqlQuery2 = ("UPDATE recipes SET DishName = '"+ name+"', DishIngredients = '"+ingredients+"', DishMaking ='"+prep+"',DishTime ='"+ time +"',DishPortions = '"+portions+"',DishImage ='"+image+"' where dishid = '" + id+"'");
                 
                         try {
                             execQuery(sqlQuery2);
                         } catch (SQLException ex) {
                             Logger.getLogger(PastaServlet.class.getName()).log(Level.SEVERE, null, ex);
                         }
-                
+                //dawaj
                         break;
                 }
             }
@@ -92,9 +93,9 @@ public class PastaServlet extends HttpServlet {
         }
     }
 
-    private PastaRecipe createPastaRecipe(String id, String name, String ingredients, String making, String portions, String time) {
+    private PastaRecipe createPastaRecipe(String id, String name, String ingredients, String making, String portions, String time, String image) {
         if (id != null && name != null && ingredients != null && making != null && portions != null && time != null) {
-            PastaRecipe recipe = new PastaRecipe(name,id,ingredients,making,portions,time);
+            PastaRecipe recipe = new PastaRecipe(name,id,ingredients,making,portions,time,image);
             return recipe;
         }
         return null;
@@ -114,7 +115,8 @@ public class PastaServlet extends HttpServlet {
                 String prep = resultSet.getString("DishMaking");
                 String portions = resultSet.getString("DishPortions");
                 String time = resultSet.getString("DishTime");
-                PastaRecipe recipe = new PastaRecipe(name,id,ingredients,prep,portions,time);
+                String img = resultSet.getString("DishImage");
+                PastaRecipe recipe = new PastaRecipe(name,id,ingredients,prep,portions,time,img);
                 pastaList.add(recipe);
             }
         }
