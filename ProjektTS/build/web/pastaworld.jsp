@@ -28,7 +28,7 @@
                   <td><c:out value="${pastarecipe.dishName}"/></td>
                   <td><c:out value="${pastarecipe.dishIngredients}"/></td>
                   <td><c:out value="${pastarecipe.dishPreparation}"/></td>
-                  <td><c:out value="${pastarecipe.dishPortion}"/></td>
+                  <td><c:out value="${pastarecipe.dishPortions}"/></td>
                   <td><c:out value="${pastarecipe.dishTime}"/></td>
 
                   

@@ -3,11 +3,9 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/uaxau/Documents/NetBeansProjects/IOProjekt/ProjektTS/web/index.html</file>
-            <file>file:/C:/Users/uaxau/Documents/NetBeansProjects/IOProjekt/ProjektTS/src/java/ServerHandling/DbUtil.java</file>
-            <file>file:/C:/Users/uaxau/Documents/NetBeansProjects/IOProjekt/ProjektTS/web/pastaworld.jsp</file>
-            <file>file:/C:/Users/uaxau/Documents/NetBeansProjects/IOProjekt/ProjektTS/src/java/BasicBeanPack/PastaRecipe.java</file>
-            <file>file:/C:/Users/uaxau/Documents/NetBeansProjects/IOProjekt/ProjektTS/src/java/ServerHandling/PastaServlet.java</file>
+            <file>file:/C:/Users/uaxau/Documents/NetBeansProjects/TSProjekt/ProjektTS/web/pastaworld.jsp</file>
+            <file>file:/C:/Users/uaxau/Documents/NetBeansProjects/TSProjekt/ProjektTS/web/index.html</file>
+            <file>file:/C:/Users/uaxau/Documents/NetBeansProjects/TSProjekt/ProjektTS/src/java/BasicBeanPack/PastaServlet.java</file>
         </group>
     </open-files>
 </project-private>
