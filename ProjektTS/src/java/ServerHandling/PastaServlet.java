@@ -23,11 +23,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- *
- * @author Student
- */
-@WebServlet("/pastaislife")
+
+@WebServlet("/PastaServlet")
 public class PastaServlet extends HttpServlet {
 
     List<PastaRecipe> pastaList = new ArrayList<>();
@@ -60,8 +57,8 @@ public class PastaServlet extends HttpServlet {
             String operation = request.getParameter("operation");
             String portions = request.getParameter("DishPortions");
             String time = request.getParameter("DishTime");
-            PastaRecipe book = createPastaRecipe(name,id,ingredients,prep,portions,time);
-            if (book != null) {
+            PastaRecipe recipe = createPastaRecipe(name,id,ingredients,prep,portions,time);
+            if (recipe != null) {
                 switch (operation) {
                     case "Add":
                         String sqlQuery = ("INSERT INTO pastas(DishName,DishID,DishIngredients,DishMaking,DishTime,DishPortions) values('" + name + "','" + id + "','" + ingredients + "','" + prep + "','" + time + "'," + portions + ")");
@@ -100,8 +97,8 @@ public class PastaServlet extends HttpServlet {
 
     private PastaRecipe createPastaRecipe(String id, String name, String ingredients, String making, String portions, String time) {
         if (id != null && name != null && ingredients != null && making != null && portions != null && time != null) {
-            PastaRecipe book = new PastaRecipe(name,id,ingredients,making,portions,time);
-            return book;
+            PastaRecipe recipe = new PastaRecipe(name,id,ingredients,making,portions,time);
+            return recipe;
         }
         return null;
     }
