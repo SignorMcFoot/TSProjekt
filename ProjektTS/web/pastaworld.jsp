@@ -18,7 +18,7 @@
                 <span><b>Ingredients:</b><c:out value="${pastarecipe.dishIngredients}"/></span>
                 <span><b>Preparation:</b><c:out value="${pastarecipe.dishPreparation}"/></span>
                 <span><b>Amount of servings:</b><c:out value="${pastarecipe.dishPortions}"/></span>
-                <span>Time:<c:out value="${pastarecipe.dishTime}"/></span>
+                <span><b>Time: </b><c:out value="${pastarecipe.dishTime}"/></span>
               </div>
               <div class="recipe-image">
                 <img src="${pastarecipe.dishImage}" alt="dish-pic" />
